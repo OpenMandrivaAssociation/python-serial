@@ -1,24 +1,24 @@
-%define oname		serial
-%define pname		py%{oname}
-%define version		2.2
-%define pyversion	2.5
+%define oname serial
+%define pname py%{oname}
+%define version 2.2
+%define minversion 2.2
 #at least python 2.2 needed, but current is 2.5
-%define release		%mkrel 3
+%define release %mkrel 4
 
-Summary:	Python serial port extension
-Name:		python-%{oname}
-Version:	%{version}
-Release:	%{release}
-Source0:	%{pname}-%{version}.tar.bz2
-License:	GPL
-Group:		Development/Python
-URL:		http://pyserial.sourceforge.net
-BuildRoot:	%{_tmppath}/%{pname}-buildroot
-BuildRequires:	libpython-devel >= %pyversion
-BuildArch:      noarch
-Requires:	python
-Obsoletes:	pyserial
-Provides:	pyserial
+Summary: Python serial port extension
+Name: python-%{oname}
+Version: %{version}
+Release: %{release}
+Source0: %{pname}-%{version}.tar.bz2
+License: GPL
+Group: Development/Python
+URL: http://pyserial.sourceforge.net
+BuildRoot: %{_tmppath}/%{pname}-buildroot
+BuildRequires: libpython-devel >= %minversion
+BuildArch: noarch
+Requires: python
+Obsoletes: pyserial
+Provides: pyserial
 
 %description
 This module encapsulates the access for the serial port.
@@ -38,20 +38,12 @@ perl -pi -e "s/#!jython/#!\/usr\/bin\/env jython/" serial/serialjava.py
 
 %install
 rm -rf %{buildroot}
-python setup.py install --root %{buildroot}
+python setup.py install --root %{buildroot} --record=INSTALLED_FILES
 
 
 %clean
 rm -rf %{buildroot}
 
-%files
+%files -f INSTALLED_FILES
 %defattr(-,root,root)
 %doc CHANGES.txt LICENSE.txt PKG-INFO README.txt examples
-%attr(0755,root,root) %py_puresitedir/%oname
-%py_puresitedir/py%oname-%version-py%pyversion.egg-info
-%ifarch x86_64
-%attr(0755,root,root) %py_platsitedir/%oname
-%endif
-
-
-
