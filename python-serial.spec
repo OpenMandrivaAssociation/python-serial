@@ -13,6 +13,7 @@ Source0: %{pname}-%{version}.tar.bz2
 License: GPL
 Group: Development/Python
 URL: http://pyserial.sourceforge.net
+BuildRoot: %{_tmppath}/%{pname}-buildroot
 BuildRequires: libpython-devel >= %minversion
 BuildArch: noarch
 Requires: python
