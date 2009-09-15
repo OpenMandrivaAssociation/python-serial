@@ -1,6 +1,6 @@
 Name:			python-serial
 Version:		2.4
-Release:		%mkrel 2
+Release:		%mkrel 3
 
 Summary:	Python serial port extension
 License:	Python
