@@ -1,17 +1,16 @@
 Name:			python-serial
-Version:		2.5
-Release:		%mkrel 1
+Version:		2.6
+Release:		1
 
 Summary:	Python serial port extension
 License:	Python license
 Group:          Development/Python
 URL:		http://pyserial.sourceforge.net
-Source0:	http://downloads.sourceforge.net/pyserial/pyserial-%{version}.tar.gz
+Source0:	https://pypi.python.org/packages/source/p/pyserial/pyserial-%{version}.tar.gz
 
 BuildArch:	noarch
 BuildRequires:	python-devel
 BuildRequires:	dos2unix
-BuildRoot:	%{_tmppath}/%{name}-%{version}
 
 Obsoletes:	pyserial < %{version}-%{release}
 Provides:	pyserial = %{version}-%{release}
@@ -33,18 +32,15 @@ perl -pi -e "s/#!jython/#!\/usr\/bin\/env jython/" serial/*.py
 dos2unix examples/port_publisher.py
 
 %install
-rm -rf %{buildroot}
 python setup.py install --root %{buildroot}
 
 %clean
-rm -rf %{buildroot}
 
 %files
-%defattr(-,root,root)
 %doc CHANGES.txt LICENSE.txt PKG-INFO README.txt examples
 %{_bindir}/miniterm.py
-%{python_sitelib}/serial
-%{python_sitelib}/pyserial-%{version}-py%{py_ver}.egg-info
+%{py_puresitedir}/serial
+%{py_puresitedir}/pyserial-%{version}-py%{py_ver}.egg-info
 
 
 %changelog
@@ -89,4 +85,5 @@ rm -rf %{buildroot}
 - rebuilt for python 2.5 (added egg-info file)
 - moved to svn
 - Created package structure for python-serial.
+
 

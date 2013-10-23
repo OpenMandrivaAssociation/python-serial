@@ -1,2 +1,4 @@
+removed_sources:
+  pyserial-2.5.tar.gz: fd991f9cf9bb02dfb3bd2cb48b582c2216f90031
 sources:
-  "pyserial-2.5.tar.gz": fd991f9cf9bb02dfb3bd2cb48b582c2216f90031
+  pyserial-2.6.tar.gz: 39e6d9a37b826c48eab6959591a174135fc2873c
