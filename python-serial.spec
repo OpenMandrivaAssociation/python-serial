@@ -1,12 +1,12 @@
 Name:			python-serial
-Version:		2.7
-Release:		3
+Version:		3.2.1
+Release:		1
 
 Summary:	Python serial port extension
 License:	Python license
 Group:          Development/Python
 URL:		http://pyserial.sourceforge.net
-Source0:	http://sourceforge.net/projects/pyserial/files/pyserial/2.7/pyserial-%{version}.tar.gz
+Source0:	https://github.com/pyserial/pyserial/releases/download/v%{version}/pyserial-%{version}.tar.gz
 
 BuildArch:	noarch
 BuildRequires:	python-devel
@@ -53,13 +53,13 @@ python setup.py install --root %{buildroot}
 %clean
 
 %files
-%doc CHANGES.txt LICENSE.txt PKG-INFO README.txt examples
+%doc CHANGES.rst LICENSE.txt PKG-INFO README.rst examples
 %{_bindir}/miniterm.py
 %{py_puresitedir}/serial
 %{py_puresitedir}/pyserial-%{version}-py%{py_ver}.egg-info
 
 %files -n python2-serial
-%doc CHANGES.txt LICENSE.txt PKG-INFO README.txt examples
+%doc CHANGES.rst LICENSE.txt PKG-INFO README.rst examples
 %{py2_puresitedir}/serial
 %{py2_puresitedir}/pyserial-%{version}-py%{py2_ver}.egg-info
 
