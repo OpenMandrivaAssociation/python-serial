@@ -35,8 +35,8 @@ selects the appropriate backend.
 %setup -q -n pyserial-%{version}
 
 #fix shebangs
-perl -pi -e "s/#! python/#!\/usr\/bin\/env python/" serial/*.py
-perl -pi -e "s/#!jython/#!\/usr\/bin\/env jython/" serial/*.py
+perl -pi -e "s/#!(.*)python//" serial/*.py serial/*/*.py
+perl -pi -e "s/#!jython//" serial/*.py serial/*/*.py
 
 #fix EOL
 dos2unix examples/port_publisher.py
