@@ -12,6 +12,8 @@ BuildArch:	noarch
 BuildRequires:	python-devel
 BuildRequires:	dos2unix
 
+BuildRequires:	python2-devel
+
 Obsoletes:	pyserial < %{version}-%{release}
 Provides:	pyserial = %{version}-%{release}
 
