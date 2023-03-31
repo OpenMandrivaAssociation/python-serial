@@ -1,6 +1,6 @@
 Name:			python-serial
 Version:		3.2.1
-Release:		2
+Release:		3
 
 Summary:	Python serial port extension
 License:	Python license
