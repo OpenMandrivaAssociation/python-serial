@@ -5,7 +5,7 @@ Release:		3
 Summary:	Python serial port extension
 License:	Python license
 Group:          Development/Python
-URL:		http://pyserial.sourceforge.net
+URL:		https://pyserial.sourceforge.net
 Source0:	https://github.com/pyserial/pyserial/releases/download/v%{version}/pyserial-%{version}.tar.gz
 
 BuildArch:	noarch
