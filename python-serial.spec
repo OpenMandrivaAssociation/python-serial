@@ -1,6 +1,6 @@
 Name:			python-serial
 Version:		3.5
-Release:		1
+Release:		2
 
 Summary:	Python serial port extension
 License:	Python license
